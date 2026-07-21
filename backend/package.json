@@ -1,0 +1,14 @@
+{
+  "name": "lista-cha-backend",
+  "version": "1.0.0",
+  "description": "API para lista de presentes de cha de cozinha com Google Sheets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "googleapis": "^140.0.1"
+  }
+}

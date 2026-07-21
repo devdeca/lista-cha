@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Presentes | Cha de Cozinha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header class="hero">
+          <p class="kicker">Cha de zoinha</p>
+          <h1>Escolha seu presente</h1>
+          <p class="subtitle">
+            Selecione um item da lista e informe seu nome para reservar.
+          </p>
+        </header>
+
+        <section class="name-section">
+          <label for="guestName">Seu nome</label>
+          <input
+            id="guestName"
+            name="guestName"
+            type="text"
+            minlength="2"
+            placeholder="Ex.: Maria"
+            autocomplete="name"
+          />
+        </section>
+
+        <section class="status" id="status"></section>
+
+        <section>
+          <div class="list-header">
+            <h2>Presentes disponiveis</h2>
+            <button id="refreshButton" class="ghost-button" type="button">Atualizar</button>
+          </div>
+          <ul id="giftList" class="gift-list"></ul>
+          <p id="emptyState" class="empty-state" hidden>
+            Todos os presentes ja foram reservados. Obrigado.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
