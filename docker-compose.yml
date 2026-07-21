@@ -1,5 +1,7 @@
 services:
   app:
+    container_name: lista-cha
+    hostname: lista-cha
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,3 +12,11 @@ services:
     volumes:
       - ./keys:/app/keys:ro
     restart: unless-stopped
+    networks:
+      lista-cha-network:
+        aliases:
+          - lista-cha
+
+networks:
+  lista-cha-network:
+    external: true
