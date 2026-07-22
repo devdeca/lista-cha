@@ -1,4 +1,4 @@
-# Lista de Presentes - Cha de Zoinha
+# Lista de Presentes - Cha de Cozinha
 
 Aplicacao simples com frontend estatico servido por Nginx e API Node.js para integrar com Google Sheets.
 

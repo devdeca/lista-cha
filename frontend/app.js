@@ -45,7 +45,7 @@ function renderGifts() {
       button.className = "reserve-button";
       button.type = "button";
       button.textContent = "Reservar";
-      button.disabled = !validName() || loading;
+      button.disabled = loading;
       button.addEventListener("click", () => reserveGift(gift));
 
       li.append(giftName, button);
@@ -95,8 +95,18 @@ async function reserveGift(gift) {
   const name = guestNameInput.value.trim();
 
   if (name.length < 2) {
-    setStatus("Digite seu nome com pelo menos 2 caracteres.", "error");
-    renderGifts();
+    setStatus("Digite seu nome antes de reservar.", "warning");
+    guestNameInput.focus();
+    guestNameInput.select();
+    return;
+  }
+
+  const confirmReservation = window.confirm(
+    `Deseja reservar "${gift}"(${name})?`,
+  );
+
+  if (!confirmReservation) {
+    setStatus("Reserva cancelada.", "");
     return;
   }
 
